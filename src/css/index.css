@@ -1,0 +1,43 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #F3F9FB;
+    font-family:fantasy;
+}
+
+#header {
+    background-color: #F3ECD3;
+    padding: 20px;
+}
+
+nav > ul{
+    display: flex;
+    gap:15px;
+    list-style-type: none;
+    color: #474F85;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+a:hover {
+    border-bottom: 2px solid #474F85;
+}

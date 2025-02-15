@@ -30,6 +30,10 @@ li {
     gap:5px;
 }
 
+li > svg{
+    border-bottom: 2px solid transparent;
+}
+
 a {
     text-decoration: none;
     color: inherit;

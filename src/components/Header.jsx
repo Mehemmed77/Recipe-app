@@ -1,8 +1,8 @@
 import React from "react";
 import HomeIcon from '@mui/icons-material/Home';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import CodeIcon from '@mui/icons-material/Code';
 import LoginIcon from '@mui/icons-material/Login';
+import FoodBankIcon from '@mui/icons-material/FoodBank';
+import ChecklistIcon from '@mui/icons-material/Checklist';
 import { Link } from "react-router";
 
 export default function Header() {
@@ -16,13 +16,13 @@ export default function Header() {
                     </li>
 
                     <li>
-                        <WorkOutlineIcon />
-                        <Link to="/workspace">Workspace</Link>
+                        <FoodBankIcon />
+                        <Link to="/recipes">Recipes</Link>
                     </li>
 
                     <li>
-                        <CodeIcon />
-                        <Link to="/editor">Editor</Link>
+                        <ChecklistIcon />
+                        <Link to="/mealplan">Meal Plans</Link>
                     </li>
                     
                     <li>

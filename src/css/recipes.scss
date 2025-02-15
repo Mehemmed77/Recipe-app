@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+
+    & > *{
+        padding: 20px;
+    }
+}
+
+.searchContent {
+    width: 70%;
+}
+
+.searchBar {
+    width: 100%;
+    display: flex;
+
+    & > .inputHolder {
+        width: 70%;
+    }
+    & > .iconHolder {
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: #F3ECD3;
+        cursor: pointer;
+    }
+}

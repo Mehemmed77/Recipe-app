@@ -19,6 +19,7 @@ export default function Recipe () {
                     species, ranging across all continents except Antarctica
                 </Typography>
             </CardContent>
+            
         </Card>
     </>
 }

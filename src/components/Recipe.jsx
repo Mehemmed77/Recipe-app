@@ -3,8 +3,11 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import dummyImg from "../imgs/dummy.png";
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 export default function Recipe () {
     return <>
@@ -19,7 +22,9 @@ export default function Recipe () {
                     species, ranging across all continents except Antarctica
                 </Typography>
             </CardContent>
-            
+            <CardActions>
+                <div className='actions'> <FavoriteBorderIcon titleAccess="Add to Favorites" /> <PlaylistAddIcon titleAccess="Add to Saved" /> </div>
+            </CardActions>
         </Card>
     </>
 }

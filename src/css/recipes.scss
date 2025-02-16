@@ -7,7 +7,7 @@
 }
 
 .searchContent {
-    width: 70%;
+    width: 75%;
 }
 
 .searchBar {
@@ -26,4 +26,18 @@
         background-color: #F3ECD3;
         cursor: pointer;
     }
+}
+
+.mainContent {
+    margin-block-start: 20px;
+}
+
+.actions {
+    & svg{cursor: pointer;}
+    margin-left: 8px;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
 }

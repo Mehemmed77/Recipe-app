@@ -14,10 +14,13 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
+    "axios": "^1.7.9",
+    "openai": "^4.85.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.1.5",
     "react-router-dom": "^7.1.5",
+    "uuid": "^11.0.5",
     "web-compiler": "file:"
   },
   "devDependencies": {

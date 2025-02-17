@@ -1,5 +1,4 @@
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -9,7 +8,7 @@ import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import dummyImg from "../imgs/dummy.png";
 import { Button, Typography } from '@mui/material';
 
-export default function Recipe () {
+export default function Recipe ({title, image, description}) {
     return <>
         <Card sx={{maxWidth: 345}}>
             <CardMedia sx={{ height: 200 }} image={dummyImg} />

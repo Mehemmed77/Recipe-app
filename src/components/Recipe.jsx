@@ -7,18 +7,24 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import dummyImg from "../imgs/dummy.png";
 import { Button, Typography } from '@mui/material';
+import { useEffect, useRef } from 'react';
 
-export default function Recipe ({title, image, description}) {
+export default function Recipe ({title, image, summary = ""}) {
+    const ref = useRef(null);
+
+    useEffect((e) => {
+        ref.current.innerHTML = summary.slice(0, 298) + "...Read More";
+    },[])
+
     return <>
         <Card sx={{maxWidth: 345}}>
-            <CardMedia sx={{ height: 200 }} image={dummyImg} />
+            <CardMedia sx={{ height: 200 }} image={image} />
             <CardContent >
                 <Typography gutterBottom variant="h5">
-                    Lorem ipsum dolor sit.
+                    {title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                <Typography ref={ref} variant="body2" sx={{ color: 'text.secondary' }}>
+                    {summary}
                 </Typography>
             </CardContent>
             <CardActions>

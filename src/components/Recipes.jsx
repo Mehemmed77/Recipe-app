@@ -21,8 +21,10 @@ export default function Recipes() {
                     <span>Search any recipe you want!</span>
                     <Grid container sx={{marginBlockStart: 2}} rowSpacing={3} columnSpacing={{ xs: 2, sm: 2, md: 4 }}>
 
-                        {/* {items.slice((page - 1) * pivot, page * pivot)
-                            .map((e) => (<Grid key={id()}> {e} </Grid>)) } */}
+                        {items.slice((page - 1) * pivot, page * pivot)
+                            .map((e) => 
+                            (<Grid key={id()}> <Recipe title={e.title} image={e.image} summary={e.summary} /> </Grid>))
+                            }
 
                     </Grid>
                 </div>

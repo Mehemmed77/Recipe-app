@@ -10,10 +10,18 @@ export default function SearchBar() {
     const [value, setValue] = useState("");
 
     const Get = (value) => {
+        if (localStorage.getItem(value) !== null) {
+            setItems(JSON.parse(localStorage.getItem(value)));
+            console.log(JSON.parse(localStorage.getItem(value)));
+            return;
+        }
+        const callLink = `https://api.spoonacular.com/recipes/complexSearch?apiKey=b0b55024a71b4578b4f082f56b028582&query=${value}&addRecipeNutrition=true&number=30`;
+
         axios
-        .get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=b0b55024a71b4578b4f082f56b028582&query=${value}&addRecipeInformation=true`)
+        .get(callLink)
         .then((response) => {
-            console.log(response.data.results);
+            localStorage.setItem(value, JSON.stringify(response.data.results));
+            setItems(response.data.results);
         })
         .catch((e) => console.log(e));
     }

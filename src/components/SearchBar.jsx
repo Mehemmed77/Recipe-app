@@ -8,22 +8,34 @@ import { useContext } from "react";
 export default function SearchBar() {
     const {items, setItems} = useContext(Context);
     const [value, setValue] = useState("");
+    const [numberOfResults, setNumberOfResults] = useState(30);
+    const maxTries = 3;
 
     const Get = (value) => {
-        if (localStorage.getItem(value) !== null) {
-            setItems(JSON.parse(localStorage.getItem(value)));
-            console.log(JSON.parse(localStorage.getItem(value)));
+
+        const cachedData = localStorage.getItem(value);
+        if (cachedData !== null) {
+            setItems(cachedData);
             return;
         }
-        const callLink = `https://api.spoonacular.com/recipes/complexSearch?apiKey=b0b55024a71b4578b4f082f56b028582&query=${value}&addRecipeNutrition=true&number=30`;
+
+        const callLink = `https://api.spoonacular.com/recipes/complexSearch?apiKey=b0b55024a71b4578b4f082f56b028582&query=${value}&addRecipeNutrition=true&number=${numberOfResults}`;
 
         axios
         .get(callLink)
         .then((response) => {
-            localStorage.setItem(value, JSON.stringify(response.data.results));
-            setItems(response.data.results);
+            const result = response.data.results;
+            localStorage.setItem(value, JSON.stringify(result));
+            setItems(result);
+            
+            if (result.length === 30) setNumberOfResults(30);
         })
-        .catch((e) => console.log(e));
+
+        .catch((e) => {
+            console.log(e);
+            setNumberOfResults(10);
+            Get(value);
+        });
     }
 
     return <>

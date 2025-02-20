@@ -1,5 +1,4 @@
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -18,7 +17,9 @@ export default function Recipe ({title, image, summary = ""}) {
 
     return <>
         <Card sx={{maxWidth: 345}}>
-            <CardMedia sx={{ height: 200 }} image={image} />
+            <div style={{height:"200px"}}>
+                <img src={image} alt={title} height={200} style={{width:"100%"}} />
+            </div>
             <CardContent >
                 <Typography gutterBottom variant="h5">
                     {title}
